@@ -1,7 +1,7 @@
 # Slaughterhouse Five Game for AP English Literature
 # Code by Ethan Davenport
 # Version 0.0.1
-# Build 0004
+# Build 0005
 
 import os, sys
 import pygame
@@ -39,3 +39,18 @@ def loadSound(name):
         print("[ERROR] Could not load sound: " + name)
         raise SystemExit
     return sound
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
+        self.image, self.rect = loadImage("billy.bmp", -1)
+        self.falling = False
+
+    def update(self):
+        # keyboard read and pos update go here
+        self.rect.midtop = pos
+    
+    def jump(self):
+        # handle jumps here
+        pass
+
