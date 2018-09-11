@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "SlaughterhouseFiveGame", "SlaughterhouseFiveGame\SlaughterhouseFiveGame.pyproj", "{821ABAC5-D70A-4E25-83F8-DDBF95D8C981}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{821ABAC5-D70A-4E25-83F8-DDBF95D8C981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821ABAC5-D70A-4E25-83F8-DDBF95D8C981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BDD02D0-7B4F-412A-A634-A8B05D161410}
+	EndGlobalSection
+EndGlobal
