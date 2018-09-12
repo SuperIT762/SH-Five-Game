@@ -1,7 +1,7 @@
 # Slaughterhouse Five Game for AP English Literature
 # Code by Ethan Davenport
 # Version 0.0.1
-# Build 0005
+# Build 0006
 
 import os, sys
 import pygame
@@ -34,23 +34,35 @@ def loadSound(name):
         return NoneSound()
     fullname = os.path.join("audio", name)
     try:
-        sound = ppygame.mixer.Sound(fullname)
+        sound = pygame.mixer.Sound(fullname)
     except pygame.error:
         print("[ERROR] Could not load sound: " + name)
         raise SystemExit
     return sound
 
-class Player(pygame.sprite.Sprite):
-    def __init__(self):
-        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
-        self.image, self.rect = loadImage("billy.bmp", -1)
-        self.falling = False
+#class Player(pygame.sprite.Sprite):
+#    def __init__(self):
+#        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
+#        self.image, self.rect = loadImage("billy.bmp", -1)
+#        self.falling = False
 
-    def update(self):
-        # keyboard read and pos update go here
-        self.rect.midtop = pos
+#    def update(self):
+#        # keyboard read and pos update go here
+#        # handle animation
+#        self.rect.midtop = pos
     
-    def jump(self):
-        # handle jumps here
-        pass
+#    def jump(self):
+#        # handle jumps here
+#        pass
 
+#class BgObj(pygame.sprite.Sprite, img, clrKy):
+#    def __init__(self):
+#        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
+#        self.image, self.rect = loadImage(img, clrKy)
+#        screen = pygame.display.get_surface()
+#        self.area = screen.get_rect()
+#        self.frame = 0
+
+class Object(pygame.sprite.Sprite):
+    # A general object class to hold various on screen objects
+    def __init__(self, )
