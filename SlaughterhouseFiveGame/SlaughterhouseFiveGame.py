@@ -63,6 +63,36 @@ def loadSound(name):
 #        self.area = screen.get_rect()
 #        self.frame = 0
 
-class Object(pygame.sprite.Sprite):
+class GameObject(pygame.sprite.Sprite):
     # A general object class to hold various on screen objects
-    def __init__(self, )
+    def __init__(self):
+        pygame.sprite.Sprite.__init__(self)
+        self.visible = True
+        self.layer = 0
+
+    def update():
+        if self.visible:
+
+
+    def vanish():
+        self.visible = False
+
+    def appear():
+        self.visible = True
+
+    def toggleVisible():
+        self.visible = not self.visible
+
+    def setLayer(newLayer):
+        if newLayer >= 0:
+            self.layer = newLayer
+        else:
+            self.layer = 0
+
+    def getVisible():
+        return self.visible
+
+    def getLayer():
+        return self.layer
+
+        
