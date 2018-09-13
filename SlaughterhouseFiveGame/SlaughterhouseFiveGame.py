@@ -1,15 +1,15 @@
 # Slaughterhouse Five Game for AP English Literature
 # Code by Ethan Davenport
 # Version 0.0.1
-# Build 0010
+# Build 0012
 import os, sys, time
 import pygame
 from pygame.locals import *
 
 if not pygame.font:
-    print("Warning! Fonts disabled.")
+    print("[WARN] Fonts disabled.")
 if not pygame.mixer:
-    print("Warning! Sound disabled.")
+    print("[WARN] Sound disabled.")
 
 def loadImage(name, colorkey=None):
     fullname = os.path.join("images", name)
@@ -74,22 +74,36 @@ def gameInit():
     pygame.init()
     screen = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("Slaughterhouse Five: The Game")
-    pygame.mouse.set_visible(0)
+    pygame.mouse.set_visible(1)
     background = pygame.Surface(screen.get_size())
     background = background.convert()
     background.fill((5, 5, 5))
     if pygame.font:
         font = pygame.font.Font(None, 36)
-        text = font.render("Loading...", 1, (255, 255, 255))
+        text = font.render("Now Loading...", 1, (255, 255, 255))
         textpos = text.get_rect(centerx=background.get_width() / 2, centery=background.get_height() / 2)
         background.blit(text, textpos)
     return screen, background
 
 def main():
+    # Setup for main loop
     screen, background = gameInit()
     screen.blit(background, (0, 0))
     pygame.display.flip()
-    print("[INFO] Game Window Created")
-    time.sleep(5)
+    print("[INFO] Game window created")
+    #mainMenu = new GameLevel() # or something
+    clock = pygame.time.Clock()
+    print("[INFO] Clock initialized")
+    
+    while True:
+        clock.tick(60)
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                print("[INFO] Stop request recieved. Shutting down...")
+                return
+            elif event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    print("[INFO] Quit button pressed. Shutting down...")
+                    return
 
 main()
