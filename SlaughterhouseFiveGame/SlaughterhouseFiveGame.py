@@ -1,9 +1,8 @@
 # Slaughterhouse Five Game for AP English Literature
 # Code by Ethan Davenport
 # Version 0.0.1
-# Build 0006
-
-import os, sys
+# Build 0010
+import os, sys, time
 import pygame
 from pygame.locals import *
 
@@ -40,28 +39,8 @@ def loadSound(name):
         raise SystemExit
     return sound
 
-#class Player(pygame.sprite.Sprite):
-#    def __init__(self):
-#        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
-#        self.image, self.rect = loadImage("billy.bmp", -1)
-#        self.falling = False
-
-#    def update(self):
-#        # keyboard read and pos update go here
-#        # handle animation
-#        self.rect.midtop = pos
-    
-#    def jump(self):
-#        # handle jumps here
-#        pass
-
-#class BgObj(pygame.sprite.Sprite, img, clrKy):
-#    def __init__(self):
-#        pygame.sprite.Sprite.__init__(self) # Pygame Sprite Initializer
-#        self.image, self.rect = loadImage(img, clrKy)
-#        screen = pygame.display.get_surface()
-#        self.area = screen.get_rect()
-#        self.frame = 0
+class GameLevel():
+    pass
 
 class GameObject(pygame.sprite.Sprite):
     # A general object class to hold various on screen objects
@@ -69,10 +48,6 @@ class GameObject(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.visible = True
         self.layer = 0
-
-    def update():
-        if self.visible:
-
 
     def vanish():
         self.visible = False
@@ -95,4 +70,26 @@ class GameObject(pygame.sprite.Sprite):
     def getLayer():
         return self.layer
 
-        
+def gameInit():
+    pygame.init()
+    screen = pygame.display.set_mode((800, 600))
+    pygame.display.set_caption("Slaughterhouse Five: The Game")
+    pygame.mouse.set_visible(0)
+    background = pygame.Surface(screen.get_size())
+    background = background.convert()
+    background.fill((5, 5, 5))
+    if pygame.font:
+        font = pygame.font.Font(None, 36)
+        text = font.render("Loading...", 1, (255, 255, 255))
+        textpos = text.get_rect(centerx=background.get_width() / 2, centery=background.get_height() / 2)
+        background.blit(text, textpos)
+    return screen, background
+
+def main():
+    screen, background = gameInit()
+    screen.blit(background, (0, 0))
+    pygame.display.flip()
+    print("[INFO] Game Window Created")
+    time.sleep(5)
+
+main()
